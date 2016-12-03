@@ -1,0 +1,157 @@
+public class DisplayMap extends JPanel {
+	static int w,h;
+	private static final long serialVersionUID = 1L;
+	static Double zoomFactor = 0.02;
+	static Double zoomFactor1 = 0.08;
+	static Double moveFactor = 0.001;
+	static Double ratio = 0.3;
+	static int zoomcont = 0;
+	
+	public DisplayMap() {
+	//	setPreferredSize( new Dimension( 640, 480 ) );
+
+		
+		 try {
+					loadNodes();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		setLayout(new MigLayout("", "[71px][79px][][][][grow][grow][][][-19.00][13.00,grow][][53.00]", "[23px][][53.00][52.00][grow][35.00,grow][grow]"));
+		
+		JButton button_1 = new JButton("^");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Move Up
+				maxLat-=moveFactor;
+				minLat-=moveFactor;
+				repaint();
+			}
+		});
+		add(button_1, "cell 12 2,alignx center,aligny bottom");
+		
+		JButton button = new JButton("<");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Move Left
+				maxLong+=moveFactor;
+				minLong+=moveFactor;
+				repaint();
+			}
+		});
+		add(button, "flowx,cell 12 3,alignx center,aligny center");
+		
+		JButton button_2 = new JButton("^");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Move Down
+				maxLat+=moveFactor;
+				minLat+=moveFactor;
+				repaint();
+			}
+		});
+		add(button_2, "cell 12 4,alignx center,aligny top");
+		
+		JButton btnNewButton = new JButton(">");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Move Right
+				maxLong-=moveFactor;
+				minLong-=moveFactor;
+				repaint();
+			}
+		});
+		add(btnNewButton, "cell 12 3,alignx center,aligny center");
+		JButton btnZoomIn = new JButton("+");
+		btnZoomIn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(zoomcont>=1)
+				{zoomFactor=0.004*4;
+				zoomFactor1=0.003*5;
+				
+				}
+				 if(zoomcont>=2)
+				{zoomFactor=0.005;
+				zoomFactor1=0.009;
+				
+				}
+				 if(zoomcont>=3)
+				{zoomFactor=0.0005;
+				zoomFactor1=0.002;
+				
+				}
+			    if(zoomcont>=6)
+				{zoomFactor=0.001;
+				zoomFactor1=0.001;
+				
+				}
+				if(zoomcont<8)
+				{
+				//Zoom In Code
+				if( (maxLat-zoomFactor)>(minLat+zoomFactor)  && (maxLong-zoomFactor1)>(minLong+zoomFactor1)){
+				maxLat-=zoomFactor;
+				minLat+=zoomFactor;
+				maxLong-=zoomFactor1;
+				minLong+=zoomFactor1;
+				zoomcont++;
+				repaint();}
+				}
+			}
+		});
+		add(btnZoomIn, "flowx,cell 12 5,alignx center,aligny top");
+		
+		JButton btnZoomOut = new JButton("-");
+		btnZoomOut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+				if(zoomcont==1)
+				{zoomFactor=0.02;
+				zoomFactor1=0.08;
+				
+				}
+				 if(zoomcont==2)
+				{zoomFactor=     0.016;
+				zoomFactor1=      0.015;
+				
+				}
+				 if(zoomcont==3)
+				{zoomFactor=    0.005;
+				zoomFactor1=  0.009;
+				
+				}
+				 if(zoomcont==4||zoomcont==5||zoomcont==6)
+				 {
+					 zoomFactor=0.0005;    
+						zoomFactor1=0.002;
+						
+
+				 }
+			    if(zoomcont==7 || zoomcont==8)
+				{zoomFactor=0.001;     
+				zoomFactor1=0.001;
+				
+				}
+				
+				if(zoomcont>0)
+				//Zoom Out Code
+				{
+				if( (maxLat+zoomFactor)>(minLat-zoomFactor)  && (maxLong+zoomFactor1)>(minLong-zoomFactor1)){
+					
+				maxLat+=zoomFactor;
+				minLat-=zoomFactor;
+				maxLong+=zoomFactor1;
+				minLong-=zoomFactor1;
+				zoomcont--;
+				repaint();}
+				}
+			}
+		});
+		add(btnZoomOut, "cell 12 5,alignx center,aligny top");
+		this.setVisible(true);
+	
+     
+
+	}
