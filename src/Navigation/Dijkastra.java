@@ -44,11 +44,7 @@ public class Dijkastra extends Object{
 	     }
 			//System.out.println("done");
 
-		 for(int jjj=0;jjj<nodes.size();jjj++) {
-		//	System.out.println(" node no = "+jjj+" dist="+dist[jjj]);
-		//	System.out.println("parent="+parent[jjj]+"\n");
-			
-		}
+		
 		
 		 return dist[des];
 	}

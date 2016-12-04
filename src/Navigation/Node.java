@@ -14,6 +14,7 @@ public class Node extends Object implements Comparable {
 	Vector <Integer> adj=new Vector<Integer>(250, 10);
 	Vector <Integer> adj_type = new Vector<Integer>(250, 10);
 	Vector <Double> weight=new Vector<Double>(250, 10);
+	Vector <Double> straight_line_dist=new Vector<Double>(250, 10);
 	
 	public long getID()
 	{
