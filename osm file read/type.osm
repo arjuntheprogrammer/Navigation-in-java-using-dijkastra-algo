@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osmconvert 0.7T" timestamp="2016-03-05T00:26:02Z">
+	<bounds minlat="28.183" minlon="76.692" maxlat="28.969" maxlon="77.733"/>
+	<node id="16173236" lat="28.6138967" lon="77.2159562" version="45" timestamp="2016-02-11T02:38:22Z" changeset="37138295" uid="1306" user="PlaneMad">
+		<tag k="name" v="New Delhi"/>
+	</node>
+	<node id="58056528" lat="28.5593895" lon="77.1710004" version="11" timestamp="2012-11-11T18:44:03Z" changeset="13837347" uid="56597" user="Oberaffe"/>
+	<node id="58061203" lat="28.5940555" lon="77.1655298" version="12" timestamp="2010-09-16T06:38:59Z" changeset="5792710" uid="343621" user="sourabh2910">
+		<tag k="network" v="DMRC"/>
+		<tag k="railway" v="station"/>
+	</node>
+	<node id="60890273" lat="28.5710614" lon="77.1701497" version="4" timestamp="2014-04-16T09:09:31Z" changeset="21725939" uid="600918" user="n&#39;garh">
+		<tag k="highway" v="traffic_signals"/>
+		<tag k="name" v="Ramesh Nagar"/>
+		<tag k="network" v="DMRC"/>
+		<tag k="railway" v="station"/>
+	</node>
+	<node id="60890274" lat="28.5718047" lon="77.1725025" version="4" timestamp="2014-04-16T09:09:31Z" changeset="21725939" uid="600918" user="n&#39;garh"/>
+	<node id="60890275" lat="28.5721363" lon="77.1735754" version="4" timestamp="2014-04-16T09:09:31Z" changeset="21725939" uid="600918" user="n&#39;garh"/>
+	<node id="60890276" lat="28.5724077" lon="77.1738071" version="4" timestamp="2014-04-16T09:09:31Z" changeset="21725939" uid="600918" user="n&#39;garh"/>
+	<node id="60890277" lat="28.572664" lon="77.1739101" version="6" timestamp="2014-04-16T09:09:31Z" changeset="21725939" uid="600918" user="n&#39;garh"/>
+	<way id="213174273" version="1" timestamp="2013-03-27T16:20:46Z" changeset="15517539" uid="1292385" user="BalaK">
+		<nd ref="2229150560"/>
+		<nd ref="2229150517"/>
+		<nd ref="2229150502"/>
+		<tag k="highway" v="residential"/>
+		<tag k="highway" v="residential"/>
+	</way>
+	<way id="213174274" version="1" timestamp="2013-03-27T16:20:46Z" changeset="15517539" uid="1292385" user="BalaK">
+		<nd ref="2229151633"/>
+		<nd ref="2229151624"/>
+		<nd ref="2229151583"/>
+		<tag k="highway" v="residential"/>
+	</way>
+	<way id="213174275" version="1" timestamp="2013-03-27T16:20:46Z" changeset="15517539" uid="1292385" user="BalaK">
+		<nd ref="2229151921"/>
+		<nd ref="2229151920"/>
+		<nd ref="2229151918"/>
+		<tag k="highway" v="residential"/>
+	</way>
+	<relation id="6013399" version="1" timestamp="2016-02-28T18:42:47Z" changeset="37505273" uid="2175648" user="Emmece">
+		<member type="way" ref="80515442" role="outer"/>
+		<member type="way" ref="400623269" role="outer"/>
+		<member type="way" ref="400623270" role="outer"/>
+		<member type="way" ref="400623283" role="outer"/>
+		<tag k="name" v="Deer Park"/>
+		<tag k="type" v="multipolygon"/>
+		<tag k="leisure" v="park"/>
+	</relation>
+	<relation id="6015734" version="1" timestamp="2016-02-29T14:35:09Z" changeset="37522830" uid="2175648" user="Emmece">
+		<member type="way" ref="400794301" role="outer"/>
+		<member type="way" ref="400794302" role="inner"/>
+		<tag k="leisure" v="swimming_pool"/>
+		<tag k="type" v="multipolygon"/>
+	</relation>
+</osm>
